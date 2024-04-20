@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CloudyFont';
+  src: url('/fonts/Cloudy-0W244.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'CloudyFont', Fallback, sans-serif;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+/* h1:hover {
+  animation: gentle-up-down 2s infinite ease-in-out;
+}
+
+h1:active {
+  animation: wiggle 0.5s infinite ease-in-out;
+}
+
+@keyframes gentle-up-down {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-6%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+} */
+
+.background--custom {
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+
+canvas#canvas {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg) scale(2) translateY(0%);
+  --gradient-color-1: #100085;
+  --gradient-color-2: #0f00b7;
+  --gradient-color-3: #003b9b;
+  --gradient-color-4: #0067c8;
+  --gradient-speed: 0.0000015;
+}
