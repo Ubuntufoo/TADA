@@ -13,8 +13,8 @@ export default function Headline() {
     <header>
       <h1
         className={`
-        mx-auto w-max text-center text-5xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in
-        ${isVisible ? 'opacity-75' : 'opacity-0'}
+        mx-auto w-max text-center text-4xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in
+        ${isVisible ? 'opacity-100' : 'opacity-0'}
         `}
       >
         Every moment is a gift. <br /> What have you done with your moments
