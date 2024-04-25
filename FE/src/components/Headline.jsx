@@ -1,25 +1,18 @@
 // the header component of the application using CloudyFont
+/* eslint-disable react/prop-types */
 
-import { useState } from 'react'
-
-export default function Headline() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  setTimeout(() => {
-    setIsVisible(true)
-  }, 2000)
-
+export default function Headline({ isVisible }) {
   return (
     <header>
       <h1
         className={`
-        mx-auto w-max text-center text-4xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in
-        ${isVisible ? 'opacity-100' : 'opacity-0'}
+        mx-auto w-max text-center text-4xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in text-shadow shadow-slate-50
+        ${isVisible ? "opacity-100" : "opacity-0"}
         `}
       >
         Every moment is a gift. <br /> What have you done with your moments
         today?
       </h1>
     </header>
-  )
+  );
 }
