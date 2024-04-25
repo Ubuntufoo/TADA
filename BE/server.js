@@ -12,23 +12,21 @@ const port = 5000;
 app.use(cors({
   origin: 'http://localhost:5173',
 }));
+app.use(express.json());
 
-app.get('/api/generate', async (req, res) => {
-  // calling the openAI API to generate text
-
+app.post('/api/generate', async (req, res) => {
   const client = new openAI({ apiKey: process.env.OPENAI_API_KEY });
   const aiModel = 'gpt-3.5-turbo-0125';
   const messages = [
     {
       role: 'system',
       content: `
-      You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. Provide a statement of positive affirmations for each accomplishment, highlighting their personal value to the user. Avoid being patronizing in your response. The response must be in the following JSON format: {"response": "Your full response", "summary": "a maximum 4-word summary of your response."}
+      You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. Provide a statement of positive affirmations for each accomplishment to the user, highlighting their personal value to the user. Avoid being patronizing in your response. The response must be in the following JSON format: {"response": "Your full response", "summary": "a maximum 4-word summary of your response."}
       `,
     },
     {
       role: 'user',
-      content: 'I ate a bowl of cherries',
-      // stream: '',
+      content: req.body.message,
     },
   ];
 

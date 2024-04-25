@@ -1,46 +1,59 @@
 // my App.jsx
 
-import Background from "./components/Background";
-import Headline from "./components/Headline";
-import MainContent from "./components/MainContent";
-import "./index.css";
+import Background from './components/Background'
+import Headline from './components/Headline'
+import UserInput from './components/UserInput'
+import './index.css'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [userInput, setUserInput] = useState("");
+  const [isVisible, setIsVisible] = useState(false)
+  const [userInput, setUserInput] = useState('')
+  const [chatBotResp, setChatBotResp] = useState('')
+
 
   setTimeout(() => {
-    setIsVisible(true);
-  }, 2000);
+    setIsVisible(true)
+  }, 2000)
 
   const handleUserInput = (newInput) => {
-    setUserInput(newInput);
-    console.log(newInput)
+    setUserInput(newInput)
   }
 
   useEffect(() => {
-    if (!userInput) return;
+    if (!userInput) return
+
     try {
-      fetch('http://localhost:5000/api/generate')
+      const options = {
+        method: 'POST',
+        body: JSON.stringify({ message: userInput }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+      console.log('🚀 ~ useEffect ~ request body:', options.body)
+
+      fetch('/api/generate', options)
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log('🚀 ~ useEffect ~ data:', data)
+          setChatBotResp(data.response)
+        })
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  }
-  , [userInput]);
+  }, [userInput])
 
   return (
     <>
       <section className="my-16">
         <Background />
         <Headline isVisible={isVisible} />
-        <MainContent isVisible={isVisible} handleUserInput={handleUserInput} />
+        <UserInput isVisible={isVisible} handleUserInput={handleUserInput} />
       </section>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
