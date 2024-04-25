@@ -6,7 +6,7 @@ export default function Headline({ isVisible }) {
     <header>
       <h1
         className={`
-        mx-auto w-max text-center text-4xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in text-shadow shadow-slate-50
+        mx-auto w-max text-center text-3xl leading-loose tracking-wide text-white transition-opacity duration-1000 ease-in text-shadow shadow-slate-50
         ${isVisible ? "opacity-100" : "opacity-0"}
         `}
       >

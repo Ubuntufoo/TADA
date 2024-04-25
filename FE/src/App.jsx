@@ -5,10 +5,11 @@ import Headline from "./components/Headline";
 import MainContent from "./components/MainContent";
 import "./index.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [userInput, setUserInput] = useState("");
 
   setTimeout(() => {
     setIsVisible(true);

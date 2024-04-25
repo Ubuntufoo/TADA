@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const openAI = require('openai');
@@ -11,19 +13,19 @@ app.use(cors({
 
 app.get('/api/generate', async (req, res) => {
   // calling the openAI API to generate text
-  const OPENAI_API_KEY = '';
-  const client = new openAI({ apiKey: OPENAI_API_KEY });
+
+  const client = new openAI({ apiKey: process.env.OPENAI_API_KEY });
   const aiModel = 'gpt-3.5-turbo-0125';
   const messages = [
     {
       role: 'system',
       content: `
-      As a self-help guru and mindfulness coach, I value your insights. I'd like to share my accomplishments from today with you, no matter how big or small. Please provide positive affirmations for each, highlighting their personal value to me. Keep responses concise and respectful, and avoid being patronizing.
+      You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. Provide a statement of positive affirmations for each accomplishment, highlighting their personal value to the user. Avoid being patronizing in your response. The response must be in the following format: {"response": "Your full response", "summary": "a maximum 4-word summary of your response."}
       `,
     },
     {
       role: 'user',
-      content: 'What is the meaning of life?',
+      content: 'I ate a bowl of cherries',
       // stream: '',
     },
   ];
@@ -38,5 +40,5 @@ app.get('/api/generate', async (req, res) => {
   res = res.status(200).json({ response: aiResponse });
 });
 
-app.listen(port, () => {console.log(`Server is running on port ${port}`)});
+app.listen(port, () => { console.log })
 
