@@ -1,3 +1,5 @@
+// back-end: server.js
+
 require('dotenv').config();
 
 const express = require('express');
@@ -8,7 +10,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:5173',
 }));
 
 app.get('/api/generate', async (req, res) => {
@@ -20,7 +22,7 @@ app.get('/api/generate', async (req, res) => {
     {
       role: 'system',
       content: `
-      You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. Provide a statement of positive affirmations for each accomplishment, highlighting their personal value to the user. Avoid being patronizing in your response. The response must be in the following format: {"response": "Your full response", "summary": "a maximum 4-word summary of your response."}
+      You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. Provide a statement of positive affirmations for each accomplishment, highlighting their personal value to the user. Avoid being patronizing in your response. The response must be in the following JSON format: {"response": "Your full response", "summary": "a maximum 4-word summary of your response."}
       `,
     },
     {
@@ -32,13 +34,15 @@ app.get('/api/generate', async (req, res) => {
 
   const completion = await client.chat.completions.create({
     model: aiModel,
+    response_format: {"type":"json_object"},
     messages,
   });
 
   const aiResponse = completion.choices[0].message.content;
 
-  res = res.status(200).json({ response: aiResponse });
+  const json = JSON.parse(aiResponse);
+  res.json(json);
 });
 
-app.listen(port, () => { console.log })
+app.listen(port, () => { console.log(port) })
 

@@ -15,12 +15,29 @@ function App() {
     setIsVisible(true);
   }, 2000);
 
+  const handleUserInput = (newInput) => {
+    setUserInput(newInput);
+    console.log(newInput)
+  }
+
+  useEffect(() => {
+    if (!userInput) return;
+    try {
+      fetch('http://localhost:5000/api/generate')
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  , [userInput]);
+
   return (
     <>
       <section className="my-16">
         <Background />
         <Headline isVisible={isVisible} />
-        <MainContent isVisible={isVisible} />
+        <MainContent isVisible={isVisible} handleUserInput={handleUserInput} />
       </section>
     </>
   );
