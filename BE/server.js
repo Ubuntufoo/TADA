@@ -34,6 +34,7 @@ app.post('/api/generate', async (req, res) => {
     model: aiModel,
     response_format: {"type":"json_object"},
     messages,
+
   });
 
   const aiResponse = completion.choices[0].message.content;

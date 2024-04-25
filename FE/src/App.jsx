@@ -3,6 +3,7 @@
 import Background from './components/Background'
 import Headline from './components/Headline'
 import UserInput from './components/UserInput'
+import ResponseView from './components/ResponseView'
 import './index.css'
 
 import { useState, useEffect } from 'react'
@@ -51,6 +52,7 @@ function App() {
         <Background />
         <Headline isVisible={isVisible} />
         <UserInput isVisible={isVisible} handleUserInput={handleUserInput} />
+        <ResponseView chatBotResp={chatBotResp} />
       </section>
     </>
   )
