@@ -25,7 +25,7 @@ export default function Drawer({ chatBotResponses, setCurrentResponse }) {
       />
       <label
         htmlFor="drawer-toggle"
-        className={`${chatBotResponses.length > 0 && isOpen===false ? 'animate-[bounce_2s_ease-in-out_infinite]' : ''} me-10 absolute bottom-8 right-8 inline-block rounded-lg bg-black p-4 transition-all ease-in-out duration-500 peer-checked:right-1/4 peer-checked:rotate-180 cursor-pointer`}
+        className={`${chatBotResponses.length > 0 && isOpen===false ? 'animate-[bounce_2s_ease-in-out_infinite]' : ''} absolute bottom-8 right-8 inline-block rounded-lg bg-black p-4 transition-all ease-in-out duration-500 peer-checked:right-1/4 peer-checked:rotate-180 cursor-pointer`}
       >
         <div className="mb-3 h-1 w-6 -rotate-45 rounded-lg bg-white"></div>
         <div className="h-1 w-6 rotate-45 rounded-lg bg-white"></div>
@@ -40,7 +40,7 @@ export default function Drawer({ chatBotResponses, setCurrentResponse }) {
           <div className="my-8 leading-10">
             {chatBotResponses.map((response, index) => (
               <p key={index}
-                className="text-gray-400 hover:text-white text-lg animate-pulse cursor-zoom-in"
+                className="text-gray-400 hover:text-white text-lg tracking-tight animate-pulse cursor-zoom-in"
                 onClick={() => updateResponseArray(index)}
               >
                 {response.summary}

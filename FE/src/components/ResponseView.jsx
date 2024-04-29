@@ -19,7 +19,7 @@ export default function ResponseView({ chatBotResponses, isLoading }) {
       ) : (
         lastResponse && (
           <div className="mt-4">
-            <div className="service-card group text-center flex cursor-pointer snap-start flex-col items-start gap-3 rounded-lg bg-white px-6 py-6 italic shadow-xl transition-all duration-300 hover:bg-[#202127]">
+            <div className="service-card group text-center flex cursor-pointer snap-start flex-col items-start rounded-lg bg-white px-6 py-6 italic shadow-xl transition-all duration-300 hover:bg-[#202127]">
               <svg
                 className="h-12 w-12 stroke-gray-800 text-5xl group-hover:stroke-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
