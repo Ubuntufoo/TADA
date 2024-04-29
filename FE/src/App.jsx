@@ -63,7 +63,10 @@ function App() {
         <Background />
         <Headline />
         <UserInput handleUserInput={handleUserInput} />
-        <ResponseView chatBotResponses={chatBotResponses} isLoading={isLoading} />
+        <ResponseView
+          chatBotResponses={chatBotResponses}
+          isLoading={isLoading}
+        />
       </section>
     </>
   )

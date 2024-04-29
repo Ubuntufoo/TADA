@@ -15,15 +15,17 @@ export default function MainContent({ handleUserInput }) {
 
   return (
     <main className="text-center">
-      <form onSubmit={handleSubmit} className={`mx-auto`}>
-        <input
-          name="UserInput"
-          className={`mt-${shiftInput ? '20' : '40'} text-${shiftInput ?  'base' : 'xl'} border-1 w-${shiftInput ? 'fit' : '1/2'}
-          rounded-full border-white bg-white p-4 text-center transition-opacity duration-1000 ease-in focus:border-white focus:outline-none focus:ring-2 focus:ring-white`}
-          placeholder="One thing I've done today is . . ."
-          type="text"
-        />
-      </form>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="UserInput"
+            className={`mt-${shiftInput ? '20' : '40'} text-${shiftInput ? 'base' : '2xl'} w-${shiftInput ? '80' : '1/2'} ${shiftInput ? 'border-2' : 'border-8 '}
+            rounded-full border-white bg-white p-4 text-center transition-all duration-1000 ease-in-out focus:border-white focus:outline-none focus:ring-2 focus:ring-white`}
+            placeholder="One thing I've done today is . . ."
+            type="text"
+          />
+        </form>
+      </div>
     </main>
   )
 }
