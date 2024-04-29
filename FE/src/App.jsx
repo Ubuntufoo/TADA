@@ -18,11 +18,17 @@ function App() {
     setUserInput(newInput)
   }
 
+  const setCurrentResponse = (index) => {
+    // move the object with the matching index to the end of the array
+    const currentResponse = chatBotResponses.splice(index, 1)
+    setChatBotResponses([...chatBotResponses, currentResponse[0]])
+  }
+
   useEffect(() => {
     // Ensure there's user input before making the API call
     if (!userInput) return
     try {
-      setIsLoading(true) // Set loading state to true before making the API call
+      setIsLoading(true)
       const options = {
         method: 'POST',
         body: JSON.stringify({ message: userInput }),
@@ -43,6 +49,7 @@ function App() {
           setChatBotResponses((prev) => [
             ...prev,
             {
+              index: prev.length,
               response: data.response,
               summary: data.summary,
             },
@@ -57,6 +64,7 @@ function App() {
       console.error('Error in API call:', error)
     }
   }, [userInput])
+  console.log(chatBotResponses)
 
   return (
     <>
@@ -68,7 +76,7 @@ function App() {
           chatBotResponses={chatBotResponses}
           isLoading={isLoading}
         />
-        <Sidebar chatBotResponses={chatBotResponses} />
+        <Sidebar chatBotResponses={chatBotResponses} setCurrentResponse={setCurrentResponse} />
       </section>
     </>
   )
