@@ -1,21 +1,25 @@
 // back-end: server.js
 
 require('dotenv').config();
-
 const express = require('express');
 const cors = require('cors');
 const openAI = require('openai');
 
+// express app initialization
 const app = express();
 const port = 5000;
 
+
+// middleware
 app.use(cors({
   origin: 'http://localhost:5173',
 }));
 app.use(express.json());
 
+// routes
 app.post('/api/generate', async (req, res) => {
   const client = new openAI({ apiKey: process.env.OPENAI_API_KEY });
+  
   const aiModel = 'gpt-3.5-turbo-0125';
   const messages = [
     {
