@@ -61,7 +61,7 @@ function App() {
     <>
       <section className="my-16">
         <Background />
-        <Headline />
+        <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} />
         <ResponseView
           chatBotResponses={chatBotResponses}
