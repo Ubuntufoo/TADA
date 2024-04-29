@@ -11,7 +11,7 @@ export default function ResponseView({ chatBotResponses, isLoading }) {
       : null
 
   return (
-    <div className="mx-auto mt-16 w-1/2">
+    <div className="mx-auto mt-16 w-1/3">
       {isLoading ? (
         <div className="flex items-center justify-center">
           <div className="h-12 w-24 animate-spin rounded-full border-b-4 border-t-4 border-white"></div>
@@ -19,7 +19,7 @@ export default function ResponseView({ chatBotResponses, isLoading }) {
       ) : (
         lastResponse && (
           <div className="mt-4">
-            <div className="service-card group flex cursor-pointer snap-start flex-col items-start gap-3 rounded-lg bg-white px-6 py-8 italic shadow-xl transition-all duration-300 hover:bg-[#202127]">
+            <div className="service-card group flex cursor-pointer snap-start flex-col items-start gap-3 rounded-lg bg-white px-6 py-6 italic shadow-xl transition-all duration-300 hover:bg-[#202127]">
               <svg
                 className="h-12 w-12 stroke-gray-800 text-5xl group-hover:stroke-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ export default function ResponseView({ chatBotResponses, isLoading }) {
               >
                 <path d="M82.87 129.48S77.32 98.96 114.31 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.59 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61zm154.26 0S231.58 98.96 268.57 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.58 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61z"></path>
               </svg>
-              <p className="text-center font-serif text-lg font-semibold text-gray-500">
+              <p className=" font-serif text-lg mx-auto font-semibold tracking-wide text-gray-500">
                 {lastResponse.response}
               </p>
               <svg

@@ -19,7 +19,7 @@ app.use(express.json());
 // routes
 app.post('/api/generate', async (req, res) => {
   const client = new openAI({ apiKey: process.env.OPENAI_API_KEY });
-  
+
   const aiModel = 'gpt-3.5-turbo-0125';
   const messages = [
     {
@@ -38,6 +38,7 @@ app.post('/api/generate', async (req, res) => {
     model: aiModel,
     response_format: {"type":"json_object"},
     messages,
+    temperature: 1.2,
 
   });
 
