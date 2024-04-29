@@ -4,6 +4,7 @@ import Background from './components/Background'
 import Headline from './components/Headline'
 import UserInput from './components/UserInput'
 import ResponseView from './components/ResponseView'
+import Sidebar from './components/Sidebar'
 import './index.css'
 
 import { useState, useEffect } from 'react'
@@ -67,6 +68,7 @@ function App() {
           chatBotResponses={chatBotResponses}
           isLoading={isLoading}
         />
+        <Sidebar chatBotResponses={chatBotResponses} />
       </section>
     </>
   )

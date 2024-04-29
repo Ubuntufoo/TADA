@@ -3,7 +3,7 @@
 
 export default function ResponseView({ chatBotResponses, isLoading }) {
   return (
-    <div className="mt-20 mx-auto w-1/2 text-slate-400">
+    <div className="mt-20 mx-auto w-1/2">
       {isLoading ? (
         <div className="flex items-center justify-center">
           {/* Add additional classes to specify the animation */}
