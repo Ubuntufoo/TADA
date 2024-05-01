@@ -13,16 +13,16 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [userInput, setUserInput] = useState('')
   const [chatBotResponses, setChatBotResponses] = useState([])
+  const [currentResponse, setCurrentResponse] = useState('')
 
   const handleUserInput = (newInput) => {
     setUserInput(newInput)
   }
 
-  const setCurrentResponse = (index) => {
-    // move the object with the matching index to the end of the array
-    const currentResponse = chatBotResponses.splice(index, 1)
-    setChatBotResponses([...chatBotResponses, currentResponse[0]])
+  const handleCurrentResponse = (index) => {
+    setCurrentResponse(chatBotResponses[index].response)
   }
+  console.log('current response:', currentResponse)
 
   useEffect(() => {
     // Ensure there's user input before making the API call
@@ -54,6 +54,7 @@ function App() {
               summary: data.summary,
             },
           ])
+          setCurrentResponse(data.response)
           setIsLoading(false) // Set loading state to false after successful response
         })
         .catch((error) => {
@@ -64,7 +65,6 @@ function App() {
       console.error('Error in API call:', error)
     }
   }, [userInput])
-  console.log(chatBotResponses)
 
   return (
     <>
@@ -72,11 +72,11 @@ function App() {
         <Background />
         <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} />
-        <ResponseView
+        <ResponseView currentResponse={currentResponse} isLoading={isLoading} />
+        <Sidebar
           chatBotResponses={chatBotResponses}
-          isLoading={isLoading}
+          handleCurrentResponse={handleCurrentResponse}
         />
-        <Sidebar chatBotResponses={chatBotResponses} setCurrentResponse={setCurrentResponse} />
       </section>
     </>
   )

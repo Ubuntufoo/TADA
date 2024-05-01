@@ -10,8 +10,8 @@ export default function Headline({ shiftHeadline }) {
         text-shadow
         `}
       >
-        Every moment is a gift. <br /> What have you done with your moments
-        today?
+        Celebrate a &apos;TA-DA&apos;. <br /> Share thing&apos;s you&apos;ve
+        done today:
       </h1>
     </header>
   )

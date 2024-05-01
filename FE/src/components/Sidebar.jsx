@@ -3,15 +3,15 @@
 
 import { useState } from 'react'
 
-export default function Drawer({ chatBotResponses, setCurrentResponse }) {
+export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen)
   }
 
-  const updateResponseArray = (index) => {
-    setCurrentResponse(index)
+  const updateResponse = (index) => {
+    handleCurrentResponse(index)
   }
 
   return (
@@ -25,24 +25,41 @@ export default function Drawer({ chatBotResponses, setCurrentResponse }) {
       />
       <label
         htmlFor="drawer-toggle"
-        className={`${chatBotResponses.length > 0 && isOpen===false ? 'animate-[bounce_2s_ease-in-out_infinite]' : ''} absolute bottom-8 right-8 inline-block rounded-lg bg-black p-4 transition-all ease-in-out duration-500 peer-checked:right-1/4 peer-checked:rotate-180 cursor-pointer`}
+        className={`${chatBotResponses.length > 0 && isOpen === false ? 'animate-[bounce_2s_ease-in-out_infinite]' : ''} absolute bottom-8 right-8 inline-block cursor-pointer rounded-lg bg-black p-4 transition-all duration-500 ease-in-out peer-checked:right-1/4 peer-checked:rotate-180`}
       >
         <div className="mb-3 h-1 w-6 -rotate-45 rounded-lg bg-white"></div>
         <div className="h-1 w-6 rotate-45 rounded-lg bg-white"></div>
       </label>
       <div
-        className={`fixed bottom-0 right-4 z-20 h-fit w-fit transform transition-all duration-500 ${
+        className={`fixed bottom-0 right-0 z-20 h-fit w-fit transform transition-all duration-500 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } bg-transparent peer-checked:translate-x-0`}
       >
-        <div className="px-6 py-4 text-center">
-          <h2 className="text-xl font-bold">Your Accomplishments</h2>
-          <div className="my-8 leading-10">
+        <div className="me-4">
+          <h2 className="text-center text-3xl font-bold underline underline-offset-8">
+            Your TA-DA List
+          </h2>
+          <div className="my-8 me-4 leading-10">
             {chatBotResponses.map((response, index) => (
-              <p key={index}
-                className="text-gray-400 hover:text-white text-lg tracking-tight animate-pulse cursor-zoom-in"
-                onClick={() => updateResponseArray(index)}
+              <p
+                key={index}
+                className="cursor-pointer text-gray-300 hover:text-white"
+                onClick={() => updateResponse(index)}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mx-2 inline-block h-5 w-5 text-green-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  transform="scale(1, -1)"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 13.293a1 1 0 0 1-1.414-1.414l4-4a1 1 0 0 1 1.414 0l8 8a1 1 0 0 1-1.414 1.414L11 10.414l-3.293 3.293a1 1 0 0 1-1.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+
                 {response.summary}
               </p>
             ))}
