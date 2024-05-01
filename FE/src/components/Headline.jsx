@@ -6,12 +6,11 @@ export default function Headline({ shiftHeadline }) {
     <header>
       <h1
         className={`
-        mx-auto w-max text-center text-${shiftHeadline ? 'lg' : '3xl'} shadow-slate-5 leading-loose tracking-wide text-white opacity-100 transition-all  duration-1000 ease-in-out
+        mx-auto w-max text-center text-${shiftHeadline ? '2xl' : '3xl'} shadow-slate-5 leading-loose tracking-wide text-white opacity-100 transition-all  duration-1000 ease-in-out
         text-shadow
         `}
       >
-        Celebrate a &apos;TA-DA&apos;. <br /> Share thing&apos;s you&apos;ve
-        done today:
+        Celebrate your &apos;TA-DA!&apos;
       </h1>
     </header>
   )

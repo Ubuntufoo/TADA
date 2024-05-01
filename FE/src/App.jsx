@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <section className="my-16">
+      <section className="mt-16">
         <Background />
         <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} />

@@ -36,14 +36,14 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
         } bg-transparent peer-checked:translate-x-0`}
       >
         <div className="me-4">
-          <h2 className="text-center text-3xl font-bold underline underline-offset-8">
-            Your TA-DA List
+          <h2 className="text-center text-3xl font-bold underline decoration-double underline-offset-8">
+            Your TA-DA! List
           </h2>
-          <div className="my-8 me-4 leading-10">
+          <div className="my-8 me-4 leading-10 text-sm">
             {chatBotResponses.map((response, index) => (
               <p
                 key={index}
-                className="cursor-pointer text-gray-300 hover:text-white"
+                className="cursor-pointer capitalize text-gray-300 hover:text-white "
                 onClick={() => updateResponse(index)}
               >
                 <svg
