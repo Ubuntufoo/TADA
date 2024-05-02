@@ -46,19 +46,19 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
                 className="cursor-pointer capitalize text-gray-300 hover:text-white "
                 onClick={() => updateResponse(index)}
               >
-                {/* <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="mx-2 inline-block h-5 w-5 text-green-500"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   transform="scale(1, -1)"
-                > */}
-                  {/* <path
+                >
+                  <path
                     fillRule="evenodd"
                     d="M7.293 13.293a1 1 0 0 1-1.414-1.414l4-4a1 1 0 0 1 1.414 0l8 8a1 1 0 0 1-1.414 1.414L11 10.414l-3.293 3.293a1 1 0 0 1-1.414 0z"
                     clipRule="evenodd"
                   />
-                </svg> */}
+                </svg>
 
                 {response.summary}
               </p>
