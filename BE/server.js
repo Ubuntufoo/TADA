@@ -7,7 +7,7 @@ const openAI = require('openai');
 
 // express app initialization
 const app = express();
-const port = 5000;
+const port = 10000;
 
 
 // middleware
