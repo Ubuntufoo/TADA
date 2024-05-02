@@ -31,24 +31,24 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
         <div className="h-1 w-6 rotate-45 rounded-lg bg-white"></div>
       </label>
       <div
-        className={` fixed bottom-0 right-0 z-20 h-fit w-fit transform rounded-l-lg pb-8 transition-all duration-500 ${
+        className={` fixed bottom-0 right-0 z-20 h-fit w-fit transform rounded-l-lg pb-10 transition-all duration-500 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } bg-gray-800 peer-checked:translate-x-0 sm:bg-transparent`}
+        } bg-lime-200 peer-checked:translate-x-0 sm:bg-transparent`}
       >
-        <div className="mt-2 sm:me-6">
-          <h2 className="px-2 text-center text-2xl font-bold underline decoration-double underline-offset-8 sm:text-3xl">
+        <div className="me-2 mt-2 sm:me-6">
+          <h2 className="px-2 text-center text-xl font-bold underline decoration-double underline-offset-8 sm:text-3xl">
             Your TA-DA! List
           </h2>
-          <div className="my-8 me-4 tracking-tight sm:leading-10">
+          <div className="my-8 me-4 leading-6 tracking-tight sm:leading-10">
             {chatBotResponses.map((response, index) => (
               <p
                 key={index}
-                className="cursor-pointer capitalize text-gray-300 hover:text-white "
+                className="cursor-pointer capitalize text-zinc-600 hover:text-white sm:text-slate-300 "
                 onClick={() => updateResponse(index)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="mx-2 inline-block h-5 w-5 text-green-500"
+                  className="mx-2 inline-block h-5 w-5 text-green-700"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   transform="scale(1, -1)"
