@@ -18,12 +18,17 @@ export default function MainContent({ handleUserInput }) {
       <form onSubmit={handleSubmit}>
         <input
           name="UserInput"
-          className={`${shiftInput ? 'mt-12' : 'mt-40'} ${shiftInput ? 'text-base' : 'text-2xl'} ${shiftInput ? 'w-1/4' : 'w-1/2'} rounded-lg
-           p-3 text-center font-semibold transition-all duration-1000 ease-in-out hover:ring-2 hover:ring-white focus:outline-none focus:ring-2 focus:ring-white`}
-          placeholder={`${shiftInput ? 'One thing...' : "One thing I've done today is..."}`}
+          className={`${
+            shiftInput
+              ? 'mt-12 text-base w-1/4'
+              : 'mt-40 text-2xl w-1/2'
+          } rounded-lg p-3 text-center font-semibold transition-all duration-1000 ease-in-out hover:ring-2 hover:ring-white focus:outline-none focus:ring-2 focus:ring-white`}
+          placeholder={`${
+            shiftInput ? 'One thing...' : "One thing I've done today is..."
+          }`}
           type="text"
         />
       </form>
     </div>
-  )
+  );
 }
