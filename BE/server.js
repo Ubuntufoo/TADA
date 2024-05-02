@@ -52,7 +52,7 @@ app.post('/api/generate', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'FE', 'dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '..', 'FE', 'dist', 'index.html'));
 });
 
 app.listen(port, () => { console.log(port) })
