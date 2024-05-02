@@ -71,7 +71,7 @@ function App() {
       <section className="mt-16">
         <Background />
         <Headline shiftHeadline={userInput} />
-        <UserInput handleUserInput={handleUserInput} />
+        <UserInput handleUserInput={handleUserInput} isDisabled={isLoading} />
         <ResponseView currentResponse={currentResponse} isLoading={isLoading} />
         <Sidebar
           chatBotResponses={chatBotResponses}

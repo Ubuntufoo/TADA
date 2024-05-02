@@ -3,7 +3,7 @@
 
 import { useState } from 'react'
 
-export default function MainContent({ handleUserInput }) {
+export default function MainContent({ handleUserInput, isDisabled }) {
   const [shiftInput, setShiftInput] = useState(false)
 
   const handleSubmit = async (e) => {
@@ -17,6 +17,7 @@ export default function MainContent({ handleUserInput }) {
     <div className="text-center">
       <form onSubmit={handleSubmit}>
         <input
+         disabled={isDisabled}
           name="UserInput"
           className={`${
             shiftInput

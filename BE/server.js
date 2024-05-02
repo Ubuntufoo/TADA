@@ -9,7 +9,7 @@ const openAI = require('openai');
 
 // express app initialization
 const app = express();
-const port = 10000;
+const port = 5000;
 
 
 // middleware
@@ -47,6 +47,7 @@ app.post('/api/generate', async (req, res) => {
 
   const aiResponse = completion.choices[0].message.content;
 
+// JSON is parsed into a JavaScript object and then converted back to JSON because the response from the API is a stringified JSON object and we want to send the response as a JSON object.
   const json = JSON.parse(aiResponse);
   res.json(json);
 });
