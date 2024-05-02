@@ -35,11 +35,11 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } bg-transparent peer-checked:translate-x-0`}
       >
-        <div className="me-4">
+        <div className="me-16">
           <h2 className="text-center text-3xl font-bold underline decoration-double underline-offset-8">
             Your TA-DA! List
           </h2>
-          <div className="my-8 me-4 leading-10 text-sm">
+          <div className="my-8 me-4 leading-10">
             {chatBotResponses.map((response, index) => (
               <p
                 key={index}

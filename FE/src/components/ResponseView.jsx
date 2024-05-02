@@ -13,9 +13,9 @@ export default function ResponseView({ currentResponse, isLoading }) {
       ) : (
         currentResponse && (
           <div>
-            <div className="mt-16 service-card group flex cursor-pointer snap-start flex-col items-start rounded-lg bg-white px-4 py-2 text-center italic shadow-xl transition-all duration-300 hover:bg-[#202127]">
+            <div className="service-card group flex cursor-pointer snap-start flex-col items-start rounded-lg bg-white px-4 py-4 text-center italic transition-all duration-300 hover:bg-[#202127]">
               <svg
-                className="h-10 w-10 stroke-gray-800 text-4xl group-hover:stroke-gray-400"
+                className="h-8 w-8 stroke-gray-800 text-4xl group-hover:stroke-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 320"
                 fill="#000000"
@@ -26,7 +26,7 @@ export default function ResponseView({ currentResponse, isLoading }) {
                 {currentResponse}
               </p>
               <svg
-                className="ms-auto h-10 w-10 stroke-gray-800 text-4xl group-hover:stroke-gray-400"
+                className="ms-auto h-8 w-8 stroke-gray-800 text-4xl group-hover:stroke-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 320"
                 fill="#000000"

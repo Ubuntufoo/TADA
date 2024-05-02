@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <section className="mt-16">
+      <main className="mt-16 flex flex-col gap-y-16">
         <Background />
         <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} isDisabled={isLoading} />
@@ -77,7 +77,7 @@ function App() {
           chatBotResponses={chatBotResponses}
           handleCurrentResponse={handleCurrentResponse}
         />
-      </section>
+      </main>
     </>
   )
 }
