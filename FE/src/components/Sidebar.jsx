@@ -53,12 +53,12 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
                   fill="currentColor"
                   transform="scale(1, -1)"
                 > */}
-                  <path
+                  {/* <path
                     fillRule="evenodd"
                     d="M7.293 13.293a1 1 0 0 1-1.414-1.414l4-4a1 1 0 0 1 1.414 0l8 8a1 1 0 0 1-1.414 1.414L11 10.414l-3.293 3.293a1 1 0 0 1-1.414 0z"
                     clipRule="evenodd"
                   />
-                </svg>
+                </svg> */}
 
                 {response.summary}
               </p>
