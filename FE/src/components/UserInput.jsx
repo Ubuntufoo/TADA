@@ -21,9 +21,9 @@ export default function MainContent({ handleUserInput, isDisabled }) {
           name="UserInput"
           className={`${
             shiftInput
-              ? 'text-base w-1/4'
-              : 'text-2xl w-1/2'
-          } rounded-lg p-3 text-center font-semibold transition-all duration-1000 ease-in-out hover:ring-4 hover:ring-white focus:outline-none focus:ring-4 focus:ring-white`}
+              ? 'sm:text-base sm:w-1/4'
+              : 'sm:text-xl sm:w-1/2'
+          } text-xs rounded-lg px-8 py-1 text-center font-semibold transition-all duration-1000 ease-in-out hover:ring-4 hover:ring-white focus:outline-none focus:ring-4 focus:ring-white`}
           placeholder={`${
             shiftInput ? 'One thing...' : "One thing I've done today is..."
           }`}

@@ -25,21 +25,21 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
       />
       <label
         htmlFor="drawer-toggle"
-        className={`${chatBotResponses.length > 0 && isOpen === false ? 'animate-[bounce_2s_ease-in-out_infinite]' : ''} absolute bottom-8 right-8 inline-block cursor-pointer rounded-lg bg-black p-4 transition-all duration-500 ease-in-out peer-checked:right-1/4 peer-checked:rotate-180`}
+        className={`${chatBotResponses.length > 0 && isOpen === false ? 'sm:animate-[bounce_2s_ease-in-out_infinite]' : ''} absolute bottom-2 right-2 inline-block cursor-pointer rounded-lg bg-black p-3 transition-all duration-500 ease-in-out peer-checked:rotate-180 sm:bottom-8 sm:right-8 sm:p-4 sm:peer-checked:right-1/4 z-50`}
       >
         <div className="mb-3 h-1 w-6 -rotate-45 rounded-lg bg-white"></div>
         <div className="h-1 w-6 rotate-45 rounded-lg bg-white"></div>
       </label>
       <div
-        className={`fixed bottom-0 right-0 z-20 h-fit w-fit transform transition-all duration-500 ${
+        className={` rounded-l-lg fixed bottom-0 right-0 z-20 h-fit w-fit transform transition-all duration-500 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } bg-transparent peer-checked:translate-x-0`}
+        } bg-gray-800 peer-checked:translate-x-0 sm:bg-transparent`}
       >
-        <div className="me-16">
-          <h2 className="text-center text-3xl font-bold underline decoration-double underline-offset-8">
+        <div className="mt-2 sm:me-16">
+          <h2 className="text-center text-2xl font-bold underline decoration-double underline-offset-8 sm:text-3xl">
             Your TA-DA! List
           </h2>
-          <div className="my-8 me-4 leading-10">
+          <div className="my-8 me-4 sm:leading-10 tracking-tight">
             {chatBotResponses.map((response, index) => (
               <p
                 key={index}
