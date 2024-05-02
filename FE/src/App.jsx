@@ -5,6 +5,7 @@ import Headline from './components/Headline'
 import UserInput from './components/UserInput'
 import ResponseView from './components/ResponseView'
 import Sidebar from './components/Sidebar'
+import InfoButton from './components/InfoButton'
 import './index.css'
 
 import { useState, useEffect } from 'react'
@@ -77,6 +78,7 @@ function App() {
           chatBotResponses={chatBotResponses}
           handleCurrentResponse={handleCurrentResponse}
         />
+        <InfoButton />
       </main>
     </>
   )
