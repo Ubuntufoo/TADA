@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <main className="mt-10 sm:mt-16 flex flex-col gap-y-6 sm:gap-y-16">
+      <main className="mt-10 sm:mt-16 flex flex-col gap-y-12 sm:gap-y-16">
         <Background />
         <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} isDisabled={isLoading} />
