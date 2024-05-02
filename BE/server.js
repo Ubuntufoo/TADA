@@ -18,7 +18,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.use(express.static('FE/dist'));
+app.use(express.static(path.resolve(__dirname, '..', 'FE', 'dist')));
 
 // routes
 app.post('/api/generate', async (req, res) => {
