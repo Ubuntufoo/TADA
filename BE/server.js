@@ -16,6 +16,8 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.use(express.static('FE/dist'));
+
 // routes
 app.post('/api/generate', async (req, res) => {
   const client = new openAI({ apiKey: process.env.OPENAI_API_KEY });
