@@ -1,5 +1,7 @@
 // back-end: server.js
 
+ const path = require('path');
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -47,6 +49,10 @@ app.post('/api/generate', async (req, res) => {
 
   const json = JSON.parse(aiResponse);
   res.json(json);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'FE', 'dist', 'index.html'));
 });
 
 app.listen(port, () => { console.log(port) })
