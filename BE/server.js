@@ -29,7 +29,7 @@ app.post('/api/generate', async (req, res) => {
     {
       role: 'system',
       content:
-        `You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. In 3 sentences, provide a statement of positive affirmations for each accomplishment directed to the user, highlighting its personal value to the user. Avoid being patronizing in your response. The response must be in the following JSON format: {"response": "Your full response to the user", "summary": "using verbiage from the user's message, create a summary with a max of 4 words with no period at the end."}`,
+        `You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. In 3 sentences, provide a statement of positive affirmations for each accomplishment directed to the user, highlighting its personal value to the user. The response must be in the following JSON format: {"response": "Your full response to the user", "summary": "using verbiage from the user's message, create a summary with a max of 4 words."}`,
     },
     {
       role: 'user',
