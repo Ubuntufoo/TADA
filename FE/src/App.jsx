@@ -40,6 +40,7 @@ function App() {
 
       fetch('/api/generate', options)
         .then((res) => {
+          console.log('res:', res)
           if (!res.ok) {
             throw new Error('Network response was not ok')
           }

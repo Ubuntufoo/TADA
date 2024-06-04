@@ -30,9 +30,9 @@ canvas#canvas {
   width: 100%;
   height: 100%;
   transform: rotate(0deg) scale(2) translateY(0%);
-  --gradient-color-1: #100850;
-  --gradient-color-2: #09006a;
-  --gradient-color-3: #00314a;
-  --gradient-color-4: #00485c;
+  --gradient-color-1: #1600bf;
+  --gradient-color-2: #291dab;
+  --gradient-color-3: #043650;
+  --gradient-color-4: #005770;
   --gradient-speed: 0.0000003;
 }

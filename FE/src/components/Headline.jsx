@@ -10,7 +10,7 @@ export default function Headline({ shiftHeadline }) {
         text-shadow
         `}
       >
-        Celebrate your &apos;TA-DA!&apos;
+        Celebrate your TA-DA!
       </h1>
     </header>
   )

@@ -2,18 +2,19 @@
 
 export default function InfoButton() {
   return (
-    <div className="group absolute bottom-2 left-2 text-sm font-bold text-zinc-600 sm:bottom-8 sm:left-8">
-      <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] opacity-0 shadow-md duration-500 group-hover:-translate-y-[130%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500 text-center">
-        <div className="pretty rounded-md bg-lime-200 p-1 text-sm">
+    <div className="group absolute bottom-4 left-4 z-20 text-sm font-semibold text-black sm:bottom-8 sm:left-8">
+      <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] text-center opacity-0 shadow-md duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500">
+        <div className="pretty rounded-full bg-blue-200 p-3 lg:p-4 lg:text-lg">
           <span>
-            TA-DA! will affirm the value of your daily accomplishments. Embrace
-            TA-DA! And celebrate achievements, big and small.
+            <span className="font-bold">TA-DA!</span> will affirm the value of
+            your daily accomplishments. Embrace TA-DA! And celebrate
+            achievements, big and small.
           </span>
         </div>
-        <div className="absolute bottom-0 left-1/4 translate-x-full translate-y-1/2 rotate-45 bg-lime-200 p-1 shadow-md"></div>
+        <div className="absolute bottom-0 left-1/4 -z-10 translate-y-1/2 rotate-45 bg-blue-200 p-3 "></div>
       </div>
 
-      <div className="flex cursor-pointer items-center rounded-full bg-gradient-to-br from-lime-200 to-yellow-200 p-3 shadow-md duration-300 group-hover:gap-2">
+      <div className="flex cursor-pointer items-center rounded-full bg-blue-200 p-3 shadow shadow-black duration-300 group-hover:gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           // eslint-disable-next-line react/no-unknown-property
