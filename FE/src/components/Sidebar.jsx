@@ -37,7 +37,7 @@ export default function Drawer({ chatBotResponses, handleCurrentResponse }) {
       >
         <div className="me-2 mt-2 sm:me-6">
           <h2 className="px-1 text-center text-xl font-bold underline decoration-double underline-offset-8 sm:text-4xl">
-            Your TA-DA! List
+            Your TADA! List
           </h2>
           <div className="my-8 me-4 leading-6 tracking-tight sm:leading-10">
             {chatBotResponses.map((response, index) => (

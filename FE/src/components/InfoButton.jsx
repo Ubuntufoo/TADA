@@ -6,8 +6,8 @@ export default function InfoButton() {
       <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] text-center opacity-0 shadow-md duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500">
         <div className="pretty rounded-full bg-blue-200 p-3 lg:p-4 lg:text-lg">
           <span>
-            <span className="font-bold">TA-DA!</span> will affirm the value of
-            your daily accomplishments. Embrace TA-DA! And celebrate
+            <span className="font-bold">TADA!</span> will affirm the value of
+            your daily accomplishments. Embrace TADA! And celebrate
             achievements, big and small.
           </span>
         </div>
@@ -32,7 +32,7 @@ export default function InfoButton() {
           </g>
         </svg>
         <span className="text-[0px] duration-300 group-hover:text-sm">
-          TA-DA! Version 1
+          TADA! Version 1
         </span>
       </div>
     </div>
