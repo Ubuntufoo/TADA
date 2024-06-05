@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       keyframes: {
         hover: {
         "0%": { transform: "translateY(0)" }, // Start from current position

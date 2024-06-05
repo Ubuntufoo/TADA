@@ -4,7 +4,7 @@ export default function InfoButton() {
   return (
     <div className="group absolute bottom-4 left-4 z-20 text-sm font-semibold text-black sm:bottom-8 sm:left-8">
       <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] text-center opacity-0 shadow-md duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500">
-        <div className="pretty rounded-full bg-blue-200 p-3 lg:p-4 lg:text-lg">
+        <div className="pretty rounded-full bg-blue-200 p-3 lg:p-5 lg:text-lg">
           <span>
             <span className="font-bold">TADA!</span> will affirm the value of
             your daily accomplishments. Embrace TADA! And celebrate
