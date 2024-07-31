@@ -1,7 +1,6 @@
 // back-end: server.js
 
- const path = require('path');
-
+const path = require('path');
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -9,15 +8,25 @@ const openAI = require('openai');
 
 // express app initialization
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
+// Allowed origins
+const allowedOrigins = ['http://localhost:5173', 'https://tmurphywebdev.netlify.app'];
 
 // middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: function (origin, callback) {
+    // allow requests with no origin, like mobile apps or curl requests
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = `The CORS policy for this site does not allow access from the specified origin: ${origin}`;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
 }));
-app.use(express.json());
 
+app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '..', 'FE', 'dist')));
 
 // routes
@@ -39,15 +48,14 @@ app.post('/api/generate', async (req, res) => {
 
   const completion = await client.chat.completions.create({
     model: aiModel,
-    response_format: {"type":"json_object"},
+    response_format: { "type": "json_object" },
     messages,
     temperature: 1.2,
-
   });
 
   const aiResponse = completion.choices[0].message.content;
 
-// JSON is parsed into a JavaScript object and then converted back to JSON because the response from the API is a stringified JSON object and we want to send the response as a JSON object.
+  // JSON is parsed into a JavaScript object and then converted back to JSON because the response from the API is a stringified JSON object and we want to send the response as a JSON object.
   const json = JSON.parse(aiResponse);
   res.json(json);
 });
@@ -56,5 +64,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'FE', 'dist', 'index.html'));
 });
 
-app.listen(port, () => { console.log(port) })
+app.listen(port, () => { console.log(`Server running on port ${port}`); });
 
