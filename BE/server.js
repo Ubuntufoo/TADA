@@ -1,6 +1,7 @@
 // back-end: server.js
 
-const path = require('path');
+ const path = require('path');
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -8,24 +9,16 @@ const openAI = require('openai');
 
 // express app initialization
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
+
 
 // Allowed origins
 const allowedOrigins = ['http://localhost:5173', 'https://tmurphywebdev.netlify.app'];
 
 // middleware
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin, like mobile apps or curl requests
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = `The CORS policy for this site does not allow access from the specified origin: ${origin}`;
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  }
+  origin: allowedOrigins
 }));
-
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '..', 'FE', 'dist')));
 
@@ -38,7 +31,7 @@ app.post('/api/generate', async (req, res) => {
     {
       role: 'system',
       content:
-        `You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. In 3 sentences, provide a statement of positive affirmations for each accomplishment directed to the user, highlighting its personal value to the user. The response must be in the following JSON format: {"response": "Your full response to the user", "summary": "using verbiage from the user's message, create a summary with a max of 4 words."}`,
+        You are a self-help guru and mindfulness coach. The user will share accomplishments from today with you, both big and small. In 3 sentences, provide a statement of positive affirmations for each accomplishment directed to the user, highlighting its personal value to the user. The response must be in the following JSON format: {"response": "Your full response to the user", "summary": "using verbiage from the user's message, create a summary with a max of 4 words."},
     },
     {
       role: 'user',
@@ -48,14 +41,15 @@ app.post('/api/generate', async (req, res) => {
 
   const completion = await client.chat.completions.create({
     model: aiModel,
-    response_format: { "type": "json_object" },
+    response_format: {"type":"json_object"},
     messages,
     temperature: 1.2,
+
   });
 
   const aiResponse = completion.choices[0].message.content;
 
-  // JSON is parsed into a JavaScript object and then converted back to JSON because the response from the API is a stringified JSON object and we want to send the response as a JSON object.
+// JSON is parsed into a JavaScript object and then converted back to JSON because the response from the API is a stringified JSON object and we want to send the response as a JSON object.
   const json = JSON.parse(aiResponse);
   res.json(json);
 });
@@ -64,5 +58,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'FE', 'dist', 'index.html'));
 });
 
-app.listen(port, () => { console.log(`Server running on port ${port}`); });
-
+app.listen(port, () => { console.log(port) })
