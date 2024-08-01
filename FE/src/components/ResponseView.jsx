@@ -5,7 +5,7 @@
 
 export default function ResponseView({ currentResponse, isLoading }) {
   return (
-    <div className="mx-auto w-2/3 sm:w-1/3">
+    <div className="mx-auto w-4/5 sm:w-2/3 2xl:w-1/3">
       {isLoading ? (
         <div className="flex items-center justify-center mt-32">
           <div className="h-12 w-24 animate-spin rounded-full border-b-4 border-t-4 border-white"></div>
@@ -13,20 +13,20 @@ export default function ResponseView({ currentResponse, isLoading }) {
       ) : (
         currentResponse && (
           <div>
-            <div className="service-card group flex cursor-pointer snap-start flex-col items-start rounded-lg bg-white px-4 py-4 text-center italic transition-all duration-300 hover:bg-[#202127]">
+            <div className="service-card group flex cursor-pointer snap-start flex-col items-start rounded-lg bg-white p-4 xl:p-6 2xl:p-8 text-center italic transition-all duration-300 hover:bg-gray-800">
               <svg
-                className="h-8 w-8 stroke-gray-800 group-hover:stroke-gray-400"
+                className="h-8 w-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 320"
                 fill="#000000"
               >
                 <path d="M82.87 129.48S77.32 98.96 114.31 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.59 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61zm154.26 0S231.58 98.96 268.57 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.58 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61z"></path>
               </svg>
-              <p className=" mx-auto text-pretty font-serif text-sm sm:text-lg font-semibold tracking-wide	text-slate-600">
+              <p className=" mx-auto text-pretty font-serif text-sm sm:text-lg 2xl:text-xl font-semibold tracking-wide	text-slate-500">
                 {currentResponse}
               </p>
               <svg
-                className="ms-auto h-8 w-8 stroke-gray-800 group-hover:stroke-gray-400"
+                className="ms-auto h-8 w-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 320"
                 fill="#000000"

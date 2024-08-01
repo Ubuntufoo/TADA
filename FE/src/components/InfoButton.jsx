@@ -2,9 +2,9 @@
 
 export default function InfoButton() {
   return (
-    <div className="group absolute bottom-4 left-4 z-20 text-sm font-semibold text-black sm:bottom-8 sm:left-8">
-      <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] text-center opacity-0 shadow-md duration-500 group-hover:-translate-y-[140%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500">
-        <div className="pretty rounded-full bg-blue-200 p-3 lg:p-5 lg:text-lg">
+    <div className="group absolute bottom-5 left-5 z-20 text-sm font-semibold text-black sm:bottom-8 sm:left-8">
+      <div className="pointer-events-none absolute w-80 -translate-y-[300%] skew-y-[30deg] text-center opacity-0 duration-500 group-hover:-translate-y-[135%] group-hover:skew-y-0 group-hover:opacity-100 group-hover:delay-500">
+        <div className="pretty rounded-full bg-blue-200 p-4 lg:p-5 lg:text-lg">
           <span>
             <span className="font-bold">TADA!</span> will affirm the value of
             your daily accomplishments. Embrace TADA! And celebrate
@@ -14,7 +14,7 @@ export default function InfoButton() {
         <div className="absolute bottom-0 left-1/4 -z-10 translate-y-1/2 rotate-45 bg-blue-200 p-3 "></div>
       </div>
 
-      <div className="flex cursor-pointer items-center rounded-full bg-blue-200 p-3 shadow shadow-black duration-300 group-hover:gap-2">
+      <div className="flex cursor-pointer items-center rounded-full bg-blue-200 p-3 shadow-2xl shadow-black duration-300 group-hover:gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           // eslint-disable-next-line react/no-unknown-property

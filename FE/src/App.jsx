@@ -70,7 +70,7 @@ function App() {
 
   return (
     <>
-      <main className="mt-10 sm:mt-16 flex flex-col gap-y-12 sm:gap-y-24 2xl:gap-16 3xl:gap-28">
+      <main className="flex flex-col justify-evenly h-screen">
         <Background />
         <Headline shiftHeadline={userInput} />
         <UserInput handleUserInput={handleUserInput} isDisabled={isLoading} />

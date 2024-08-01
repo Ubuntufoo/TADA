@@ -34,5 +34,5 @@ canvas#canvas {
   --gradient-color-2: #291dab;
   --gradient-color-3: #043650;
   --gradient-color-4: #005770;
-  --gradient-speed: 0.0000003;
+  --gradient-speed: 0.000002;
 }
