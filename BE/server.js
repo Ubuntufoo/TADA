@@ -12,12 +12,14 @@ const app = express();
 const port = 5000;
 
 
+// Allowed origins
+const allowedOrigins = ['http://localhost:5173', 'https://tmurphywebdev.netlify.app'];
+
 // middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: allowedOrigins
 }));
 app.use(express.json());
-
 app.use(express.static(path.resolve(__dirname, '..', 'FE', 'dist')));
 
 // routes
@@ -57,4 +59,3 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => { console.log(port) })
-
